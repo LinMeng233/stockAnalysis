@@ -1,0 +1,170 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=5376, tid=0x0000000000006b78
+#
+# JRE version:  (8.0_211-b12) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.211-b12 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000003702000):  JavaThread "Unknown thread" [_thread_in_vm, id=27512, stack(0x0000000003600000,0x0000000003700000)]
+
+Stack: [0x0000000003600000,0x0000000003700000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000003702000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=27512, stack(0x0000000003600000,0x0000000003700000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c1400000, size: 4076 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 76288K, used 1310K [0x000000076b180000, 0x0000000770680000, 0x00000007c0000000)
+  eden space 65536K, 2% used [0x000000076b180000,0x000000076b2c7af0,0x000000076f180000)
+  from space 10752K, 0% used [0x000000076fc00000,0x000000076fc00000,0x0000000770680000)
+  to   space 10752K, 0% used [0x000000076f180000,0x000000076f180000,0x000000076fc00000)
+ ParOldGen       total 175104K, used 0K [0x00000006c1400000, 0x00000006cbf00000, 0x000000076b180000)
+  object space 175104K, 0% used [0x00000006c1400000,0x00000006c1400000,0x00000006cbf00000)
+ Metaspace       used 786K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000012d30000,0x0000000013530000] byte_map_base: 0x000000000f726000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005e495ce0
+ Begin Bits: [0x0000000014080000, 0x0000000018030000)
+ End Bits:   [0x0000000018030000, 0x000000001bfe0000)
+
+Polling page: 0x0000000001890000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000003970000, 0x0000000003be0000, 0x0000000012970000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.043 loading class java/lang/Short
+Event: 0.043 loading class java/lang/Short done
+Event: 0.043 loading class java/lang/Integer
+Event: 0.043 loading class java/lang/Integer done
+Event: 0.043 loading class java/lang/Long
+Event: 0.043 loading class java/lang/Long done
+Event: 0.043 loading class java/lang/NullPointerException
+Event: 0.043 loading class java/lang/NullPointerException done
+Event: 0.043 loading class java/lang/ArithmeticException
+Event: 0.043 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff6383d0000 - 0x00007ff638407000 	E:\Path\Jdk\bin\java.exe
+0x00007ffebb9e0000 - 0x00007ffebbbd0000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffeb9f80000 - 0x00007ffeba032000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffeb8960000 - 0x00007ffeb8c04000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffeba040000 - 0x00007ffeba0e3000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffeba8d0000 - 0x00007ffeba96e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffebb340000 - 0x00007ffebb3d7000 	C:\Windows\System32\sechost.dll
+0x00007ffebb680000 - 0x00007ffebb7a0000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffeba0f0000 - 0x00007ffeba285000 	C:\Windows\System32\USER32.dll
+0x00007ffeb8cb0000 - 0x00007ffeb8cd1000 	C:\Windows\System32\win32u.dll
+0x00007ffeba290000 - 0x00007ffeba2b6000 	C:\Windows\System32\GDI32.dll
+0x00007ffeb9850000 - 0x00007ffeb99e6000 	C:\Windows\System32\gdi32full.dll
+0x00007ffeb99f0000 - 0x00007ffeb9a8e000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffeb8ce0000 - 0x00007ffeb8dda000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffeac170000 - 0x00007ffeac3f4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1016_none_9e7a36bbe461dae4\COMCTL32.dll
+0x00007ffeba2c0000 - 0x00007ffeba5f5000 	C:\Windows\System32\combase.dll
+0x00007ffeb8c10000 - 0x00007ffeb8c90000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffeba6b0000 - 0x00007ffeba6de000 	C:\Windows\System32\IMM32.DLL
+0x000000005e520000 - 0x000000005e5f2000 	E:\Path\Jdk\jre\bin\msvcr100.dll
+0x000000005dc70000 - 0x000000005e515000 	E:\Path\Jdk\jre\bin\server\jvm.dll
+0x00007ffebb330000 - 0x00007ffebb338000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffea2110000 - 0x00007ffea2119000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffeba700000 - 0x00007ffeba76f000 	C:\Windows\System32\WS2_32.dll
+0x00007ffea9960000 - 0x00007ffea9984000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffeb3b40000 - 0x00007ffeb3b4a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffeac5a0000 - 0x00007ffeac5cd000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffeb9070000 - 0x00007ffeb90ba000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffeb2250000 - 0x00007ffeb225f000 	E:\Path\Jdk\jre\bin\verify.dll
+0x00007ffe95f30000 - 0x00007ffe95f59000 	E:\Path\Jdk\jre\bin\java.dll
+0x00007ffe91890000 - 0x00007ffe918c5000 	E:\Path\Jdk\jre\bin\jdwp.dll
+0x00007ffeacd10000 - 0x00007ffeacd18000 	E:\Path\Jdk\jre\bin\npt.dll
+0x00007ffe8eba0000 - 0x00007ffe8ebc3000 	E:\Path\Jdk\jre\bin\instrument.dll
+0x00007ffe95a70000 - 0x00007ffe95a86000 	E:\Path\Jdk\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:8274,suspend=y,server=n -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Users\MyDream\.IntelliJIdea2019.3\system\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 com.mydream.stockAnalysis.StockAnalysisApplicationTests,contextLoads
+java_class_path (initial): D:\Program Files\JetBrains\IntelliJ IDEA 2019.3\lib\idea_rt.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\junit\lib\junit5-rt.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\junit\lib\junit-rt.jar;E:\Path\Jdk\jre\lib\charsets.jar;E:\Path\Jdk\jre\lib\deploy.jar;E:\Path\Jdk\jre\lib\ext\access-bridge-64.jar;E:\Path\Jdk\jre\lib\ext\cldrdata.jar;E:\Path\Jdk\jre\lib\ext\dnsns.jar;E:\Path\Jdk\jre\lib\ext\jaccess.jar;E:\Path\Jdk\jre\lib\ext\jfxrt.jar;E:\Path\Jdk\jre\lib\ext\localedata.jar;E:\Path\Jdk\jre\lib\ext\nashorn.jar;E:\Path\Jdk\jre\lib\ext\sunec.jar;E:\Path\Jdk\jre\lib\ext\sunjce_provider.jar;E:\Path\Jdk\jre\lib\ext\sunmscapi.jar;E:\Path\Jdk\jre\lib\ext\sunpkcs11.jar;E:\Path\Jdk\jre\lib\ext\zipfs.jar;E:\Path\Jdk\jre\lib\javaws.jar;E:\Path\Jdk\jre\lib\jce.jar;E:\Path\Jdk\jre\lib\jfr.jar;E:\Path\Jdk\jre\lib\jfxswt.jar;E:\Path\Jdk\jre\lib\jsse.jar;E:\Path\Jdk\jre\lib\management-agent.jar;E:\Path\Jdk\jre\lib\plugin.jar;E:\Path\Jdk\jre\lib\resources.jar;E:\Path\Jdk\jre\lib\rt.jar;E:\GitHub\stockAnalysis\target\test-classes;E:\GitHub\stockAnalysis\target\classes;C:\Users\MyDream\.m2\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar;C:\Users\MyDream\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.3.3.RELEASE\spring-boot-starter-jdbc-2.3.3.RELEASE.jar;C:\Users\MyDream\.m2\repository\org\springframework\boot\spring-boot-starter\2.3.3.RELEASE\spring-boot-starter-2.3.3.RELEASE.jar;C:\Users\MyDream\.m2\repository\org\springframework\boot\spring-boot\2.3.3.RELEASE\spring-boot-2.3.3.RELEASE.jar;C:\Users\MyDream\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.3.3.RELEASE\spring-boot-starter-logging-2.3.3.RELEASE.jar;C:\Users\MyDream\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\MyDream\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\MyDream\.m2\repository\org\apache\logging\log4j\log4j-t
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=E:\Path\Jdk
+JRE_HOME=E:\Path\Jre
+CLASSPATH=E:\Path\Jdk\lib\dt.jar;E:\Path\Jdk\lib\tools.jar;
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;D:\Program Files\Git\cmd;E:\Path\Python;E:\Path\Maven\apache-maven-3.6.2\bin;E:\Path\Jdk\bin;E:\Path\Jdk\jre\bin;E:\Path\gradle-4.9\bin;C:\Program Files (x86)\MinGW\bin;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;E:\Path\Python\Scripts\;E:\Path\Python\;D:\Program Files\JetBrains\IntelliJ IDEA 2019.2.2\bin;C:\Program Files\Bandizip\;D:\Program Files\JetBrains\PyCharm 2019.2.2\bin;D:\Program Files\Fiddler;;D:\Microsoft VS Code\bin;D:\Program Files\JetBrains\CLion 2019.2.4\bin;;D:\Program Files\JetBrains\IntelliJ IDEA 2019.3\bin;;D:\Program Files\JetBrains\WebStorm 2019.3.4\bin;
+USERNAME=MyDream
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.959)
+
+CPU:total 6 (initial active 6) (6 cores per cpu, 1 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16687128k(4193884k free), swap 29711764k(5492k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.211-b12) for windows-amd64 JRE (1.8.0_211-b12), built on Apr  1 2019 20:53:26 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Aug 30 21:44:08 2020
+timezone: 中国标准时间
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
