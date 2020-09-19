@@ -13,6 +13,8 @@ public class ForeignCapitalFlowInfo {
     //交易时间
     @TableId(value = "transaction_date")
     private String transactionDate;
+    //序号
+    private Integer serialNumber;
     //沪股通流入金额
     private BigDecimal shInflowAmount;
     //深股通流入金额

@@ -9,8 +9,7 @@ public class DateUtil {
         return DateTimeFormatter.ofPattern(format).format(zonedDateTime);
     }
 
-    public static int getCurrentDate(){
-      String date = getCurrentTime("yyyyMMdd");
-      return Integer.parseInt(date);
+    public static String getCurrentDate(){
+      return getCurrentTime("yyyyMMdd");
     }
 }

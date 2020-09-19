@@ -13,6 +13,8 @@ public class CapitalFlowInfo implements Serializable {
     //交易日期
     @NonNull
     private String transactionDate;
+    //序号
+    private int index;
     //沪股通
     private BigDecimal shInflowAmount;
     //深股通
